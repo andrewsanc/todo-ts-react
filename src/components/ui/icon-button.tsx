@@ -6,7 +6,6 @@ interface IconButtonProps {
 
 export default function IconButton(props: IconButtonProps) {
   const { icon } = props;
-  console.log(icon);
 
   return (
     <div className="flex gap-4">
