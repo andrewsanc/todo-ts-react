@@ -10,9 +10,9 @@ export default function App() {
   ]);
 
   return (
-    <div className="h-screen relative">
+    <div className="h-screen relative flex flex-col items-center sm:w-full">
       <HeroImage />
-      {/* <Header /> */}
+      <Header />
       {/* <TodoForm /> */}
       {/* <div>{todos && todos.map((todo) => <Todo todo={todo} />)}</div> */}
     </div>
