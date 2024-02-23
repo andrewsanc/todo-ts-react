@@ -21,7 +21,7 @@ export default function TodoForm(props: TodoFormProp) {
       <div className="flex items-center bg-white rounded-md sm:w-[540px] w-[325px] sm:h-[65px] h-[50px] px-4 gap-6">
         <Circle />
         <input
-          className="w-full text-slate-400 rounded-md active:border-none sm:h-[65px] h-[50px] focus:outline-none focus:text-slate-900"
+          className="w-full text-slate-400 rounded-md active:border-none sm:h-[65px] h-[50px] focus:outline-none focus:text-slate-700"
           type="text"
           placeholder="Create a new todo..."
           name="title"

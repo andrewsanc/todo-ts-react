@@ -15,7 +15,7 @@ export default function Todo(prop: TodoProps) {
   return (
     <div className="flex items-center gap-4 px-2 py-4 mx-2 border-b-2">
       <Circle />
-      <div className="grow">{title}</div>
+      <div className="grow text-slate-700">{title}</div>
       <IconButton icon={DeleteIcon} />
     </div>
   );
