@@ -1,5 +1,3 @@
-import MoonIcon from "../../assets/icon-moon.svg";
-
 interface IconButtonProps {
   icon: string;
 }
@@ -10,7 +8,7 @@ export default function IconButton(props: IconButtonProps) {
   return (
     <div className="flex gap-4">
       <button>
-        <img src={MoonIcon} />
+        <img src={icon} />
       </button>
     </div>
   );
