@@ -6,3 +6,7 @@ export type TodoType = {
 export type FormDataType = {
   title: string;
 };
+
+export type FilterType = {
+  type: "active" | "completed";
+};

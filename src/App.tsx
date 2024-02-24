@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FormDataType, TodoType } from "./types/types";
+import { FilterType, FormDataType, TodoType } from "./types/types";
 import Todo from "./components/todo";
 import Header from "./components/header";
 import HeroImage from "./components/ui/hero-image";
@@ -8,6 +8,7 @@ import FormControls from "./components/form-controls";
 
 export default function App() {
   const [todos, setTodos] = useState<TodoType[]>([]);
+  const [filter, setFilter] = useState<FilterType | null>(null);
 
   function addTodo(formData: FormDataType) {
     const { title } = formData;
@@ -23,6 +24,13 @@ export default function App() {
     setTodos([...todos]);
   }
 
+  const filteredTodos = todos.filter((todo) => {
+    if (filter?.type) {
+      return filter.type === "completed" ? todo.isComplete : !todo.isComplete;
+    }
+    return todo;
+  });
+
   return (
     <div className="bg-slate-200 h-screen">
       <HeroImage />
@@ -31,10 +39,14 @@ export default function App() {
         <TodoForm addTodo={addTodo} />
         <div className="flex flex-col bg-white rounded-md sm:w-[540px] w-[325px] shadow-lg">
           {todos &&
-            todos.map((todo, i) => (
+            filteredTodos.map((todo, i) => (
               <Todo todo={todo} key={i} deleteTodo={() => deleteTodo(i)} />
             ))}
-          <FormControls todoSize={todos.length} clearTodos={clearTodos} />
+          <FormControls
+            todoSize={filteredTodos.length}
+            clearTodos={clearTodos}
+            setFilter={setFilter}
+          />
         </div>
       </div>
     </div>
