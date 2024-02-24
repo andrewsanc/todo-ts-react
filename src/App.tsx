@@ -8,7 +8,7 @@ import FormControls from "./components/form-controls";
 
 export default function App() {
   const [todos, setTodos] = useState<TodoType[]>([]);
-  const [filter, setFilter] = useState<FilterType | null>(null);
+  const [filter, setFilter] = useState<FilterType>("all");
 
   function addTodo(formData: FormDataType) {
     const { title } = formData;
@@ -30,10 +30,10 @@ export default function App() {
   }
 
   const filteredTodos = todos.filter((todo) => {
-    if (filter?.type) {
-      return filter.type === "completed" ? todo.isComplete : !todo.isComplete;
+    if (filter.type === "all") {
+      return todo;
     }
-    return todo;
+    return filter.type === "completed" ? todo.isComplete : !todo.isComplete;
   });
 
   return (
@@ -56,6 +56,7 @@ export default function App() {
             todoSize={filteredTodos.length}
             clearTodos={clearTodos}
             setFilter={setFilter}
+            filter={filter}
           />
         </div>
       </div>

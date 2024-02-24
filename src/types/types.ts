@@ -8,5 +8,5 @@ export type FormDataType = {
 };
 
 export type FilterType = {
-  type: "active" | "completed";
+  type: "active" | "completed" | "all";
 };
