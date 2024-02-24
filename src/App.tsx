@@ -18,14 +18,24 @@ export default function App() {
     setTodos(todos.filter((todo) => !todo.isComplete));
   }
 
+  function deleteTodo(i: number) {
+    todos.splice(i, 1);
+    setTodos([...todos]);
+  }
+
   return (
-    <div className="h-screen relative flex flex-col items-center sm:w-full gap-6">
+    <div className="bg-slate-200 h-screen">
       <HeroImage />
-      <Header />
-      <TodoForm addTodo={addTodo} />
-      <div className="flex flex-col bg-white rounded-md sm:w-[540px] w-[325px]">
-        {todos && todos.map((todo, i) => <Todo todo={todo} key={i} />)}
-        <FormControls todoSize={todos.length} clearTodos={clearTodos} />
+      <div className="relative flex flex-col items-center sm:w-full gap-6">
+        <Header />
+        <TodoForm addTodo={addTodo} />
+        <div className="flex flex-col bg-white rounded-md sm:w-[540px] w-[325px] shadow-lg">
+          {todos &&
+            todos.map((todo, i) => (
+              <Todo todo={todo} key={i} deleteTodo={() => deleteTodo(i)} />
+            ))}
+          <FormControls todoSize={todos.length} clearTodos={clearTodos} />
+        </div>
       </div>
     </div>
   );
