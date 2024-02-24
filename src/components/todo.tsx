@@ -1,7 +1,7 @@
 import { TodoType } from "../types/types";
 import IconButton from "./ui/icon-button";
 import Icon from "./ui/icon";
-import Circle from "./ui/circle-icon";
+import CircleIcon from "./ui/circle-icon";
 
 interface TodoProps {
   todo: TodoType;
@@ -19,7 +19,7 @@ export default function Todo(prop: TodoProps) {
   return (
     <div className="flex items-center gap-4 px-2 py-4 mx-2 border-b-2">
       <IconButton onClick={completeTodo}>
-        {isComplete ? <Circle isComplete /> : <Circle />}
+        {isComplete ? <CircleIcon isComplete /> : <CircleIcon />}
       </IconButton>
       <div
         className={`grow text-slate-700 text-ellipsis ${

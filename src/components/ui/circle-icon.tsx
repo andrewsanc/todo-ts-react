@@ -1,10 +1,10 @@
 import Icon from "./icon";
 
-interface CircleProps {
+interface CircleIconProps {
   isComplete?: boolean;
 }
 
-export default function Circle(props: CircleProps) {
+export default function CircleIcon(props: CircleIconProps) {
   const { isComplete } = props;
 
   return (
