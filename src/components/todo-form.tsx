@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FormDataType } from "../types/types";
-import Circle from "./ui/circle";
+import Circle from "./ui/circle-icon";
 
 interface TodoFormProp {
   addTodo: (formData: FormDataType) => void;

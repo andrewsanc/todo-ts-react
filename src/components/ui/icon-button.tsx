@@ -1,16 +1,14 @@
 interface IconButtonProps {
-  icon: string;
+  children?: React.ReactNode;
   onClick?: () => void;
 }
 
 export default function IconButton(props: IconButtonProps) {
-  const { icon, onClick } = props;
+  const { children, onClick } = props;
 
   return (
     <div className="flex gap-4">
-      <button onClick={onClick}>
-        <img src={icon} />
-      </button>
+      <button onClick={onClick}>{children}</button>
     </div>
   );
 }

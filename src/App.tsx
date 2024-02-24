@@ -24,6 +24,11 @@ export default function App() {
     setTodos([...todos]);
   }
 
+  function completeTodo(i: number) {
+    todos[i].isComplete = !todos[i].isComplete;
+    setTodos([...todos]);
+  }
+
   const filteredTodos = todos.filter((todo) => {
     if (filter?.type) {
       return filter.type === "completed" ? todo.isComplete : !todo.isComplete;
@@ -40,7 +45,12 @@ export default function App() {
         <div className="flex flex-col bg-white rounded-md sm:w-[540px] w-[325px] shadow-lg">
           {todos &&
             filteredTodos.map((todo, i) => (
-              <Todo todo={todo} key={i} deleteTodo={() => deleteTodo(i)} />
+              <Todo
+                todo={todo}
+                key={i}
+                deleteTodo={() => deleteTodo(i)}
+                completeTodo={() => completeTodo(i)}
+              />
             ))}
           <FormControls
             todoSize={filteredTodos.length}

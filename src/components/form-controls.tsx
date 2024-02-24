@@ -18,7 +18,7 @@ export default function FormControls(props: FormControlsProps) {
           <Button text="All" onClick={() => setFilter(null)} />
           <Button text="Active" onClick={() => setFilter({ type: "active" })} />
           <Button
-            text=" Completed"
+            text="Completed"
             onClick={() => setFilter({ type: "completed" })}
           />
         </div>
@@ -28,7 +28,7 @@ export default function FormControls(props: FormControlsProps) {
         <Button text="All" onClick={() => setFilter(null)} />
         <Button text="Active" onClick={() => setFilter({ type: "active" })} />
         <Button
-          text=" Completed"
+          text="Completed"
           onClick={() => setFilter({ type: "completed" })}
         />
       </div>

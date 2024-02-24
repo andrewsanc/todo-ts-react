@@ -1,4 +1,4 @@
-import MoonIcon from "../assets/icon-moon.svg";
+import Icon from "./ui/icon";
 import IconButton from "./ui/icon-button";
 
 export default function Header() {
@@ -7,7 +7,9 @@ export default function Header() {
       <h1 className="font-semibold text-2xl tracking-[1rem] sm:tracking-[1.5rem] text-white">
         TODO
       </h1>
-      <IconButton icon={MoonIcon} />
+      <IconButton>
+        <Icon name="Moon" />
+      </IconButton>
     </div>
   );
 }
