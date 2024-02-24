@@ -8,7 +8,7 @@ import FormControls from "./components/form-controls";
 
 export default function App() {
   const [todos, setTodos] = useState<TodoType[]>([]);
-  const [filter, setFilter] = useState<FilterType>("all");
+  const [filter, setFilter] = useState<FilterType>({ type: "all" });
 
   function addTodo(formData: FormDataType) {
     const { title } = formData;
