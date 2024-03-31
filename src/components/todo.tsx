@@ -22,7 +22,7 @@ export default function Todo(prop: TodoProps) {
         {isComplete ? <CircleIcon isComplete /> : <CircleIcon />}
       </IconButton>
       <div
-        className={`grow text-slate-700 text-ellipsis dark:text-[#4D5067] ${
+        className={`grow text-slate-700 text-ellipsis dark:text-[#C8CBE7] ${
           isComplete && "line-through"
         }`}
       >
