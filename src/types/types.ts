@@ -10,3 +10,5 @@ export type FormDataType = {
 export type FilterType = {
   type: "active" | "completed" | "all";
 };
+
+export type ThemeType = "light" | "dark";

@@ -17,12 +17,12 @@ export default function Todo(prop: TodoProps) {
   } = prop;
 
   return (
-    <div className="flex items-center gap-4 px-2 py-4 mx-2 border-b-2">
+    <div className="flex items-center gap-4 px-2 py-4 mx-2 border-b-2 dark:bg-[#393A4b] dark:border-[#4D5067]">
       <IconButton onClick={completeTodo}>
         {isComplete ? <CircleIcon isComplete /> : <CircleIcon />}
       </IconButton>
       <div
-        className={`grow text-slate-700 text-ellipsis ${
+        className={`grow text-slate-700 text-ellipsis dark:text-[#4D5067] ${
           isComplete && "line-through"
         }`}
       >

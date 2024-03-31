@@ -4,7 +4,7 @@ import CheckIcon from "../../assets/icon-check.svg";
 import SunIcon from "../../assets/icon-sun.svg";
 
 interface IconProps {
-  name: "Moon" | "Circle" | "Delete" | "Check";
+  name: "Moon" | "Sun" | "Delete" | "Check";
 }
 
 const IconMap = new Map<string, string>([

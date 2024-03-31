@@ -1,5 +1,4 @@
-import Icon from "./ui/icon";
-import IconButton from "./ui/icon-button";
+import ThemeSwitch from "./theme-switch";
 
 export default function Header() {
   return (
@@ -7,9 +6,7 @@ export default function Header() {
       <h1 className="font-semibold text-2xl tracking-[1rem] sm:tracking-[1.5rem] text-white">
         TODO
       </h1>
-      <IconButton>
-        <Icon name="Moon" />
-      </IconButton>
+      <ThemeSwitch />
     </div>
   );
 }

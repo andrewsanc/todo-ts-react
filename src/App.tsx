@@ -37,12 +37,12 @@ export default function App() {
   });
 
   return (
-    <div className="bg-slate-200 h-screen">
+    <div className="bg-slate-200 dark:bg-[#171823] h-screen dark:text-[#C8CBE7]">
       <HeroImage />
       <div className="relative flex flex-col items-center sm:w-full gap-6">
         <Header />
         <TodoForm addTodo={addTodo} />
-        <div className="flex flex-col bg-white rounded-md sm:w-[540px] w-[325px] shadow-lg">
+        <div className="flex flex-col bg-white rounded-md sm:w-[540px] w-[325px] shadow-lg dark:bg-[#393A4b]">
           {todos &&
             filteredTodos.map((todo, i) => (
               <Todo

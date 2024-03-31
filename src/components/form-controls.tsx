@@ -15,7 +15,7 @@ export default function FormControls(props: FormControlsProps) {
 
   return (
     <>
-      <div className="flex items-center justify-around px-2 py-4 h-[65px]">
+      <div className="flex items-center justify-around px-2 py-4 h-[65px] dark:bg-[#393A4b]">
         <p className="text-slate-400 text-sm">{todoSize} items left</p>
         <div className="hidden sm:flex gap-2">
           {ButtonNames.map((name) => {
@@ -30,7 +30,7 @@ export default function FormControls(props: FormControlsProps) {
         </div>
         <Button text="clear completed" onClick={clearTodos} />
       </div>
-      <div className="flex items-center justify-center px-2 py-4 h-[65px] gap-2 sm:hidden">
+      <div className="flex items-center justify-center px-2 py-4 h-[65px] gap-2 sm:hidden dark:bg-[#393A4b]">
         {ButtonNames.map((name) => {
           return (
             <Button text={name} onClick={() => setFilter({ type: name })} />
