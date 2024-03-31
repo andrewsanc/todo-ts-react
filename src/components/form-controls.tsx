@@ -3,7 +3,7 @@ import Button from "./ui/button";
 
 interface FormControlsProps {
   todoSize: number;
-  filter: FilterType | null;
+  filter: FilterType;
   clearTodos: () => void;
   setFilter: React.Dispatch<React.SetStateAction<FilterType>>;
 }
@@ -22,7 +22,7 @@ export default function FormControls(props: FormControlsProps) {
             return (
               <Button
                 text={name}
-                active={filter?.type === name}
+                active={filter.type === name}
                 onClick={() => setFilter({ type: name })}
               />
             );

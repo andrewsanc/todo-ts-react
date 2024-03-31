@@ -5,12 +5,12 @@ interface ButtonProps {
 }
 
 export default function Button(props: ButtonProps) {
-  const { text, onClick, active } = props;
+  const { text, onClick, active = false } = props;
 
   return (
     <button
-      className={`font-semibold text-slate-400 hover:opacity-80 text-sm capitalize ${
-        active && "text-indigo-600"
+      className={`font-semibold hover:opacity-80 text-sm capitalize ${
+        active ? "text-indigo-600" : "text-slate-400"
       }`}
       onClick={onClick}
     >
