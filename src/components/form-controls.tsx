@@ -1,17 +1,22 @@
-import { FilterType } from "../types/types";
+import { FilterType, TodoType } from "../types/types";
 import Button from "./ui/button";
 
 interface FormControlsProps {
   todoSize: number;
+  todos: TodoType[];
+  updateTodos: (updatedTodos: TodoType[]) => void;
   filter: FilterType;
-  clearTodos: () => void;
   setFilter: React.Dispatch<React.SetStateAction<FilterType>>;
 }
 
 const ButtonNames = ["all", "active", "completed"] as const;
 
 export default function FormControls(props: FormControlsProps) {
-  const { todoSize, filter, clearTodos, setFilter } = props;
+  const { todoSize, todos, updateTodos, filter, setFilter } = props;
+
+  function deleteCompletedTodos() {
+    updateTodos(todos.filter((todo) => !todo.isComplete));
+  }
 
   return (
     <>
@@ -28,7 +33,7 @@ export default function FormControls(props: FormControlsProps) {
             );
           })}
         </div>
-        <Button text="clear completed" onClick={clearTodos} />
+        <Button text="clear completed" onClick={deleteCompletedTodos} />
       </div>
       <div className="flex items-center justify-center px-2 py-4 h-[65px] gap-2 sm:hidden dark:bg-[#393A4b] rounded-md">
         {ButtonNames.map((name) => {

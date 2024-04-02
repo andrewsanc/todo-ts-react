@@ -5,16 +5,28 @@ import CircleIcon from "./ui/circle-icon";
 
 interface TodoProps {
   todo: TodoType;
-  deleteTodo: () => void;
-  completeTodo: () => void;
+  todos: TodoType[];
+  index: number;
+  updateTodos: (updatedTodos: TodoType[]) => void;
 }
 
 export default function Todo(prop: TodoProps) {
   const {
     todo: { title, isComplete },
-    deleteTodo,
-    completeTodo,
+    todos,
+    index,
+    updateTodos,
   } = prop;
+
+  function deleteTodo() {
+    todos.splice(index, 1);
+    updateTodos([...todos]);
+  }
+
+  function completeTodo() {
+    todos[index].isComplete = !todos[index].isComplete;
+    updateTodos([...todos]);
+  }
 
   return (
     <div className="flex items-center gap-4 px-2 py-4 mx-2 border-b-2 dark:bg-[#393A4b] dark:border-[#4D5067]">

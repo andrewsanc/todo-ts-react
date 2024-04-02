@@ -1,18 +1,19 @@
 import { useState } from "react";
-import { FormDataType } from "../types/types";
+import { TodoType } from "../types/types";
 import CircleIcon from "./ui/circle-icon";
 
 interface TodoFormProp {
-  addTodo: (formData: FormDataType) => void;
+  todos: TodoType[];
+  updateTodos: (updatedTodos: TodoType[]) => void;
 }
 
 export default function TodoForm(props: TodoFormProp) {
-  const { addTodo } = props;
+  const { todos, updateTodos } = props;
   const [todoTitle, setTodoTitle] = useState<string>("");
 
   function handleOnSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    addTodo({ title: todoTitle });
+    updateTodos([{ title: todoTitle, isComplete: false }, ...todos]);
     setTodoTitle("");
   }
 
